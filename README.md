@@ -1,5 +1,7 @@
 # ResultObject
 
+[![Build Status](https://travis-ci.org/vzharkov/result_object.svg?branch=master)](https://travis-ci.org/vzharkov/result_object)
+
 This gem is the simple result object. It provides very small interface to result any value or error.
 
 ## Installation
@@ -32,7 +34,7 @@ class Command
     if value > 0
       Success(value)
     else
-      error = 'Value is not valid"
+      error = 'Value is not valid'
       Failure(error)
     end
   end
