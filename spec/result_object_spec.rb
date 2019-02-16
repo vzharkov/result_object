@@ -5,12 +5,8 @@ RSpec.describe ResultObject do
     expect(ResultObject::VERSION).to eq('0.1.0')
   end
 
-  class UsageClass
-    include ResultObject
-  end
-
   describe 'Success' do
-    subject(:result) { UsageClass.new.Success(value) }
+    subject(:result) { ResultObject.success(value) }
 
     context 'when passed value' do
       let(:value) { :result_value }
@@ -24,7 +20,7 @@ RSpec.describe ResultObject do
   end
 
   describe 'Failure' do
-    subject(:result) { UsageClass.new.Failure(error) }
+    subject(:result) { ResultObject.failure(error) }
 
     context 'when passed error' do
       let(:error) { 'some error' }

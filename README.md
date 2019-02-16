@@ -24,18 +24,16 @@ Or install it yourself as:
 Just include `ResultObject` module into your class and you gain access to `Success` and `Failure` methods:
 ```ruby
 class Command
-  include ResultObject
-
   def initialize(value)
     @value = value
   end
 
   def call
     if value > 0
-      Success(value * 5)
+      ResultObject.success(value * 5)
     else
       error = 'Value is not valid'
-      Failure(error)
+      ResultObject.failure(error)
     end
   end
 end
@@ -45,6 +43,24 @@ end
 > true
 >> result.value
 > 25
+```
+
+Success result:
+```ruby
+result = ResultObject.success(5)
+result.success? # true
+result.failure? # false
+result.value # 5
+result.error # nil
+```
+
+Failure result:
+```ruby
+result = ResultObject.failure('invalid data')
+result.success? # false
+result.failure? # true
+result.value # nil
+result.error # 'invalid data'
 ```
 
 ## Development
