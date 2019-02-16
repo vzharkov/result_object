@@ -1,4 +1,4 @@
-# ResultObject
+# ResultObject :musical_note: 
 
 [![Build Status](https://travis-ci.org/vzharkov/result_object.svg?branch=master)](https://travis-ci.org/vzharkov/result_object)
 
@@ -21,7 +21,7 @@ Or install it yourself as:
     $ gem install result_object
 
 ## Usage
-
+Just include `ResultObject` module into your class and you gain access to `Success` and `Failure` methods:
 ```ruby
 class Command
   include ResultObject
@@ -32,13 +32,19 @@ class Command
 
   def call
     if value > 0
-      Success(value)
+      Success(value * 5)
     else
       error = 'Value is not valid'
       Failure(error)
     end
   end
 end
+
+>> result = Command.new(5).call
+>> result.success?
+> true
+>> result.value
+> 25
 ```
 
 ## Development
