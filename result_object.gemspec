@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Simple result object with single responsibility}
   spec.description   = %q{ResultObject help to return simple smart result objects from another objects.}
-  spec.homepage      = "https://github.com/vzharkov/result_object."
+  spec.homepage      = "https://github.com/vzharkov/result_object"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
