@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/vzharkov/result_object.svg?branch=master)](https://travis-ci.org/vzharkov/result_object)
 
-This gem is the simple result object. It provides very small interface to result any value or error.
+This gem is the super simple result object. It provides very small interface to return value or error.
 
 ## Installation
 
